@@ -259,22 +259,6 @@ For a repeat experiment with more Monte Carlo rounds, change `--rounds` in **bot
 
 This diagnostic code builds on [Segment Policy Optimization](https://github.com/AIFrameResearch/SPO), which in turn acknowledges [VinePPO](https://github.com/McGill-NLP/VinePPO). Please retain the original project attribution and license when redistributing this repository.
 
-## Citation
-
-If you use the underlying SPO implementation, cite the original paper:
-
-```bibtex
-@misc{guo2025segmentpolicyoptimizationeffective,
-  title={Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models},
-  author={Yiran Guo and Lijie Xu and Jie Liu and Dan Ye and Shuang Qiu},
-  year={2025},
-  eprint={2505.23564},
-  archivePrefix={arXiv},
-  primaryClass={cs.LG},
-  url={https://arxiv.org/abs/2505.23564}
-}
-```
-
 ## License
 
 See [LICENSE](LICENSE) for the license inherited from the original repository.
