@@ -4,7 +4,6 @@
 
 Reproducing a GSM8K comparison of GRPO, VinePPO, SPO-int5, and PPO advantage estimators.
 
-[Original SPO project](https://github.com/AIFrameResearch/SPO) | [Original SPO paper](https://arxiv.org/abs/2505.23564)
 
 </div>
 
