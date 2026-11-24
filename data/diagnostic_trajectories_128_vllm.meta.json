@@ -1,0 +1,39 @@
+{
+  "dataset_path": "/root/SPO/data/gsm8k_validation_selection/diagnostic",
+  "model_name_or_path": "/root/autodl-tmp/models/rho-1b-sft-GSM8K",
+  "inference_engine": "vllm.LLM",
+  "reward_protocol": {
+    "name": "gsm8k_project_terminal_v1",
+    "implementation": "treetune.episode_generators.math_episode_generator.MATHRewardFunction",
+    "task": "GSM8K(use_original_format=True)",
+    "penalize_unfinished_response": true,
+    "unfinished_response_penalty": 0.0,
+    "length_finish_reward": 0.0,
+    "multiple_answer_penalty": -2.0,
+    "answer_normalization": "prediction: strip/remove commas/lower; gold: strip/lower"
+  },
+  "vllm_version": "0.4.0.post1",
+  "num_questions": 128,
+  "limit": null,
+  "group_size": 8,
+  "temperature": 0.6,
+  "top_p": 0.9,
+  "max_new_tokens": 1024,
+  "prompt_template": "[MATH_TASK] Problem:\n{query}\n\nSolution:",
+  "stop_text": "\n\n\nProblem:",
+  "seed": 42,
+  "logprobs": 1,
+  "dtype": "auto",
+  "gpu_memory_utilization": 0.5,
+  "max_model_len": null,
+  "trust_remote_code": false,
+  "engine_seed": 0,
+  "enable_prefix_caching": true,
+  "prompt_mode": "prompt_token_ids",
+  "random_streams": {
+    "trajectory_generation": "seed + row_index",
+    "trajectory_selection": "seed + 1000000 + row_index"
+  },
+  "selection_random_stream_offset": 1000000,
+  "output_path": "/root/data/diagnostic_trajectories_128_vllm.jsonl"
+}

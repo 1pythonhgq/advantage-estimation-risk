@@ -1,0 +1,187 @@
+{
+  "status": "complete",
+  "trajectory_sha256": "66fccda07480582507bf905a4c4331d970b57f76811eaf9917b9f8e1b45d516c",
+  "trajectory_metadata": {
+    "dataset_path": "/root/SPO/data/gsm8k_validation_selection/diagnostic",
+    "model_name_or_path": "/root/autodl-tmp/models/rho-1b-sft-GSM8K",
+    "inference_engine": "vllm.LLM",
+    "reward_protocol": {
+      "name": "gsm8k_project_terminal_v1",
+      "implementation": "treetune.episode_generators.math_episode_generator.MATHRewardFunction",
+      "task": "GSM8K(use_original_format=True)",
+      "penalize_unfinished_response": true,
+      "unfinished_response_penalty": 0.0,
+      "length_finish_reward": 0.0,
+      "multiple_answer_penalty": -2.0,
+      "answer_normalization": "prediction: strip/remove commas/lower; gold: strip/lower"
+    },
+    "vllm_version": "0.4.0.post1",
+    "num_questions": 128,
+    "limit": null,
+    "group_size": 8,
+    "temperature": 0.6,
+    "top_p": 0.9,
+    "max_new_tokens": 1024,
+    "prompt_template": "[MATH_TASK] Problem:\n{query}\n\nSolution:",
+    "stop_text": "\n\n\nProblem:",
+    "seed": 42,
+    "logprobs": 1,
+    "dtype": "auto",
+    "gpu_memory_utilization": 0.5,
+    "max_model_len": null,
+    "trust_remote_code": false,
+    "engine_seed": 0,
+    "enable_prefix_caching": true,
+    "prompt_mode": "prompt_token_ids",
+    "random_streams": {
+      "trajectory_generation": "seed + row_index",
+      "trajectory_selection": "seed + 1000000 + row_index"
+    },
+    "selection_random_stream_offset": 1000000,
+    "output_path": "/root/data/diagnostic_trajectories_128_vllm.jsonl"
+  },
+  "partitions_sha256": "85d759e94b4c06f190731a59133b06782b850526fe1841cf2ecc5ef6a11222f7",
+  "partition_metadata": {
+    "status": "complete",
+    "input_sha256": "66fccda07480582507bf905a4c4331d970b57f76811eaf9917b9f8e1b45d516c",
+    "trajectory_metadata": {
+      "dataset_path": "/root/SPO/data/gsm8k_validation_selection/diagnostic",
+      "model_name_or_path": "/root/autodl-tmp/models/rho-1b-sft-GSM8K",
+      "inference_engine": "vllm.LLM",
+      "reward_protocol": {
+        "name": "gsm8k_project_terminal_v1",
+        "implementation": "treetune.episode_generators.math_episode_generator.MATHRewardFunction",
+        "task": "GSM8K(use_original_format=True)",
+        "penalize_unfinished_response": true,
+        "unfinished_response_penalty": 0.0,
+        "length_finish_reward": 0.0,
+        "multiple_answer_penalty": -2.0,
+        "answer_normalization": "prediction: strip/remove commas/lower; gold: strip/lower"
+      },
+      "vllm_version": "0.4.0.post1",
+      "num_questions": 128,
+      "limit": null,
+      "group_size": 8,
+      "temperature": 0.6,
+      "top_p": 0.9,
+      "max_new_tokens": 1024,
+      "prompt_template": "[MATH_TASK] Problem:\n{query}\n\nSolution:",
+      "stop_text": "\n\n\nProblem:",
+      "seed": 42,
+      "logprobs": 1,
+      "dtype": "auto",
+      "gpu_memory_utilization": 0.5,
+      "max_model_len": null,
+      "trust_remote_code": false,
+      "engine_seed": 0,
+      "enable_prefix_caching": true,
+      "prompt_mode": "prompt_token_ids",
+      "random_streams": {
+        "trajectory_generation": "seed + row_index",
+        "trajectory_selection": "seed + 1000000 + row_index"
+      },
+      "selection_random_stream_offset": 1000000,
+      "output_path": "/root/data/diagnostic_trajectories_128_vllm.jsonl"
+    },
+    "actor_dtype": "bfloat16",
+    "actor_flash_attention_2": true,
+    "probability_source": "PPOTrainer._forward_pass_actor: float(logits)/temperature -> log_softmax; no top-p",
+    "schema": "project_methods_v2",
+    "project_protocol": {
+      "schema": "project_methods_v2",
+      "vine_max_steps": 25,
+      "delimiter": "",
+      "sampling": {
+        "max_tokens": 1024,
+        "stop": "\"\n\n\nProblem:\"",
+        "temperature": 0.6,
+        "top_p": 0.9
+      },
+      "model_context_size": 2047,
+      "mc_samples": 9,
+      "answer_extractor": {
+        "node_key_name": "full_text",
+        "solution_prefix": "\nSolution:",
+        "type": "identity_with_solution_prefix"
+      },
+      "task": {
+        "dataset_dict_path": "/root/VinePPO/data/gsm8k",
+        "load_dataset_dict": true,
+        "remove_calculator_expressions": true,
+        "type": "gsm8k",
+        "use_original_format": true
+      },
+      "spo_interval": 5,
+      "probability_mask": false,
+      "advantage_stage": "episode_generator_before_trainer_whitening"
+    },
+    "source_fingerprint": "6478e6e9f3c7075034bbe5aa4f7c9fd5484d56694d3dde61a0d5b156910acb5c",
+    "variant": "project_estimation_without_spo_probability_mask"
+  },
+  "reward_protocol": {
+    "name": "gsm8k_project_terminal_v1",
+    "implementation": "treetune.episode_generators.math_episode_generator.MATHRewardFunction",
+    "task": "GSM8K(use_original_format=True)",
+    "penalize_unfinished_response": true,
+    "unfinished_response_penalty": 0.0,
+    "length_finish_reward": 0.0,
+    "multiple_answer_penalty": -2.0,
+    "answer_normalization": "prediction: strip/remove commas/lower; gold: strip/lower"
+  },
+  "schema": "project_methods_v2",
+  "project_protocol": {
+    "schema": "project_methods_v2",
+    "vine_max_steps": 25,
+    "delimiter": "",
+    "sampling": {
+      "max_tokens": 1024,
+      "stop": "\"\n\n\nProblem:\"",
+      "temperature": 0.6,
+      "top_p": 0.9
+    },
+    "model_context_size": 2047,
+    "mc_samples": 9,
+    "answer_extractor": {
+      "node_key_name": "full_text",
+      "solution_prefix": "\nSolution:",
+      "type": "identity_with_solution_prefix"
+    },
+    "task": {
+      "dataset_dict_path": "/root/VinePPO/data/gsm8k",
+      "load_dataset_dict": true,
+      "remove_calculator_expressions": true,
+      "type": "gsm8k",
+      "use_original_format": true
+    },
+    "spo_interval": 5,
+    "probability_mask": false,
+    "advantage_stage": "episode_generator_before_trainer_whitening"
+  },
+  "mc_samples_per_request": 9,
+  "rounds": 3,
+  "backend": "engine",
+  "max_pending_requests": 16,
+  "max_num_seqs": 256,
+  "gamma": 1.0,
+  "batch_whitening": false,
+  "probability_mask": false,
+  "variant": "project_estimation_without_spo_probability_mask",
+  "mc_prefix_protocol": "project text queries re-encoded with vLLM tokenizer defaults",
+  "mc_length_protocol": "project EfficientIIDExpander._compute_max_tokens",
+  "reference_compatibility": "Token mapping is not target equivalence: verify horizon and terminal/EOS definition before comparison",
+  "seed_namespaces": {
+    "reference": [
+      1,
+      2
+    ],
+    "vineppo": 3,
+    "spo_int5": 4,
+    "grpo": 5
+  },
+  "seed_formula": "namespace*2**48 + seed + round*2**36 + canonical_row_index*2**16 + value_index",
+  "record_order": "completion order; join by row_index and reference_token_indices",
+  "audit_path": "/root/data/method_advantages_128_r3.rollouts.jsonl",
+  "completed_questions": 128,
+  "generated_token_count": 2312301,
+  "elapsed_seconds": 573.3608562201262
+}
